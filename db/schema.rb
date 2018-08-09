@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 2018_08_09_113202) do
 
   create_table "user_subjects", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "subjects_id"
+    t.bigint "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subjects_id"], name: "index_user_subjects_on_subjects_id"
+    t.index ["subject_id"], name: "index_user_subjects_on_subject_id"
     t.index ["user_id"], name: "index_user_subjects_on_user_id"
   end
 
@@ -62,14 +62,16 @@ ActiveRecord::Schema.define(version: 2018_08_09_113202) do
     t.inet "last_sign_in_ip"
     t.string "name"
     t.integer "role"
+    t.bigint "classroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["classroom_id"], name: "index_users_on_classroom_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "questions", "subjects"
   add_foreign_key "questions", "users"
-  add_foreign_key "user_subjects", "subjects", column: "subjects_id"
+  add_foreign_key "user_subjects", "subjects"
   add_foreign_key "user_subjects", "users"
 end

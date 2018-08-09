@@ -1,3 +1,4 @@
 class Subject < ApplicationRecord
-   # belongs_to :classroom
+  has_many :questions 
+  belongs_to :classroom
 end

@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name
       t.integer :role
+      t.references :classroom
       t.timestamps null: false
     end
 
