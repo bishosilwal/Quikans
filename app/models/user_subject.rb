@@ -1,4 +1,4 @@
 class UserSubject < ApplicationRecord
   belongs_to :user
-  belongs_to :subjects
+  belongs_to :subject
 end
