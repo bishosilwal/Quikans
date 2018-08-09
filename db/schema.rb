@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_09_083756) do
+ActiveRecord::Schema.define(version: 2018_08_09_113202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 2018_08_09_083756) do
     t.string "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "title"
+    t.text "answer"
+    t.bigint "subject_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_questions_on_subject_id"
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -57,6 +68,8 @@ ActiveRecord::Schema.define(version: 2018_08_09_083756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "questions", "subjects"
+  add_foreign_key "questions", "users"
   add_foreign_key "user_subjects", "subjects", column: "subjects_id"
   add_foreign_key "user_subjects", "users"
 end
