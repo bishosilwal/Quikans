@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 2018_08_09_113202) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.text "title"
+    t.string "title"
     t.text "answer"
+    t.text "body"
     t.bigint "subject_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false

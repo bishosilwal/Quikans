@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="row">
+    
+    <div class="col-12">
+      <h2><%= @question.title%></h2>
+      <label>by: <%= @question.user.name%></label> <br/>
+      <label>posted on: <%=@question.created_at%></label>
+      <hr style="border-top: 2px solid;"/>
+    </div>
+    <div class="col-12">
+      <h6 style="color: grey;">Question:</h6>
+      <p>
+        <%= @question.body%>
+      </p>
+    </div>
+    <div class="col-12">
+      <h3>Answer</h3>
+      <p>
+        <%= @question.answer%>
+      </p>
+    </div>
+
+    <div class="col-12" style="height: 200px">
+      <div class="fb-comments" data-href="https://localhost:3000/question/<%=@question.id %>" data-numposts="5"></div>
+    </div>
+    
+    
+  </div>
+</div>

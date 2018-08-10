@@ -12,7 +12,13 @@
  classroom = Classroom.create(grade: 'class1')
 
 
- subject = Subject.create(name: 'English', classroom_id: classroom.id)
- Question.create(title: 'test question', user_id: student.id, subject_id: subject.id )
- UserSubject.create(user_id: teacher.id, subject_id: subject.id)
+ subject1 = Subject.create(name: 'English', classroom_id: classroom.id)
+ subject2 = Subject.create(name: 'Nepali', classroom_id: classroom.id)
+ subject3 = Subject.create(name: 'Social', classroom_id: classroom.id)
+ 
+ Question.create(title: 'test question1', user_id: student.id, subject_id: subject1.id )
+ Question.create(title: 'test question2', user_id: student.id, subject_id: subject2.id )
+ Question.create(title: 'test question3', user_id: student.id, subject_id: subject3.id )
+ Question.create(title: 'test question4', user_id: student.id, subject_id: subject1.id )
+ UserSubject.create(user_id: teacher.id, subject_id: subject1.id)
  

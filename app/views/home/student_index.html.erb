@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3 profile"  >
-      <div class='card card-profile text-center' >
+      <div class='card card-profile text-center mt-3' >
         <div class='card-block'>
           <img alt='' class='card-img-profile' src='https://png.pngtree.com/element_origin_min_pic/16/08/28/1157c25b04bc51f.jpg' width="140">
           <h4 class='card-title'>
@@ -21,12 +21,13 @@
         <% subject.questions.each do |question|%>
           <div class="card question">
             <div class="card-header">
-              <%= question.subject.name%>
+              <label class="pull-left"><%= question.subject.name%></label>
+              <label class="pull-right"> comment: 0</label>
             </div>
             <div class="card-body">
               <h5 class="card-title"><%=question.title%></h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text"><%= question.body%></p>
+              <a href="/question/<%= question.id%>" class="btn btn-primary pull-right">view</a>
             </div>
           </div>
         <%end%>  
