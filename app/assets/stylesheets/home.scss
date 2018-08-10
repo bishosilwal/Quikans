@@ -1,3 +1,20 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$card-bg: #e6e5e1;
+$dribbble-color: #ea4b89;
+$twitter-color: #68aade;
+$facebook-color: #3b5999;
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: transparent;
+}
+
+.question{
+  margin: 10px 0px 10px 0px;
+}
