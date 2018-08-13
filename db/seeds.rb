@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+classroom = Classroom.create(grade: 'class1')
  User.create(name: 'admin', email: 'admin@gmail.com', password: 'admin123', role: 'admin')
- student = User.create(name: 'student', email: 'student@gmail.com', password: 'student123', role: 'student')
- teacher = User.create(name: 'teacher', email: 'teacher@gmail.com', password: 'teacher123', role: 'teacher')
- classroom = Classroom.create(grade: 'class1')
+ student = User.create(name: 'student', email: 'student@gmail.com', password: 'student123', role: 'student', classroom_id: classroom.id)
+ teacher = User.create(name: 'teacher', email: 'teacher@gmail.com', password: 'teacher123', role: 'teacher', classroom_id: classroom.id)
+ 
 
 
  subject1 = Subject.create(name: 'English', classroom_id: classroom.id)
