@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :user_subjects
   has_many :questions
-  belongs_to :classroom
+  belongs_to :classroom, optional: :true
   enum role: { admin: 0, teacher: 1, student: 2, guest: 3 } 
 
   private
