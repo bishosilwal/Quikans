@@ -22,7 +22,7 @@
           <div class="card question">
             <div class="card-header">
               <label class="pull-left"><%= question.subject.name%></label>
-              <label class="pull-right"> comment: 0</label>
+              <label class="pull-right"> Answer: <%= question.answer.nil? ? 'Not Given' : 'Given'%></label>
             </div>
             <div class="card-body">
               <h5 class="card-title"><%=question.title%></h5>

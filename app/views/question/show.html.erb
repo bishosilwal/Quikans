@@ -16,7 +16,7 @@
     <div class="col-12">
       <h3>Answer</h3>
       <p>
-        <%= @question.answer%>
+        <%= @question.answer.nil? ? 'This question has not been answer yet' : @question.answer %>
       </p>
     </div>
 
