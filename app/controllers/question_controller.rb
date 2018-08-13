@@ -8,7 +8,11 @@ class QuestionController < ApplicationController
   def create
     question = Question.new(question_params)
     question.user = current_user
-    question.save
+    if question.save
+      flash.notice ="New question added successfully"
+    else
+      flash.error ="Failed!! Question isnot added"
+    end
     redirect_to home_index_url
   end
 
