@@ -32,6 +32,7 @@ gem 'jquery-rails'      #!!!!!new gem added for jquery
 gem 'rails_admin', '~> 1.3'
 gem 'rails_admin_material'
 gem 'font-awesome-sass'
+gem "paperclip", "~> 6.0.0"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
