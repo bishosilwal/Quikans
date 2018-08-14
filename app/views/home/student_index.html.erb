@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2 profile"  >
-      <div class='card card-profile text-center mt-3' >
+    <div class="col-2 "  >
+      <div class='card card-profile text-center mt-3 sticky' >
         <div class='card-block' style="background-color: #563d7c">
           <%= image_tag current_user.avatar.url(:thumb) %>
           <%= form_for :user, url: user_update_path, html: { multipart: true }, method: 'put' do |form| %>
@@ -43,7 +43,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title"><%=question.title%></h5>
-              <p class="card-text"><%= question.body%></p>
+              <p class="card-text"><%= truncate question.body, length: 200%></p>
               <a href="/question/<%= question.id%>" class="btn btn-primary pull-right">view</a>
             </div>
           </div>
@@ -51,7 +51,7 @@
       <%end%>
     </div>
     <div class="col-4" style="padding-right: 0px;">
-      <div class="card mt-3" style="border: 1px solid #918f8f">
+      <div class="card mt-3 sticky" style="border: 1px solid #918f8f">
             <div class="card-header" style="background-color: #563d7c; color: white;">
               <label class="pull-left">New Question</label>
             </div>
