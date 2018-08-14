@@ -45,7 +45,7 @@
             <div class="card-body">
               <h5 class="card-title"><%=question.title%></h5>
               <p class="card-text"><%= truncate question.body, length: 200%></p>
-              <a href="/question/<%= question.id%>" class="btn btn-primary pull-right">view</a>
+              <a href="/question/<%= question.id%>" class="btn btn-primary pull-right btn-question-submit">view</a>
             </div>
           </div>
         <%end%>  
