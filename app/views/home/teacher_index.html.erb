@@ -3,7 +3,14 @@
     <div class="col-2 profile"  >
       <div class='card card-profile text-center mt-3' >
         <div class='card-block' style="background-color: #563d7c">
-          <img alt='' class='card-img-profile' src='https://png.pngtree.com/element_origin_min_pic/16/08/28/1157c25b04bc51f.jpg' width="140">
+         <%= image_tag current_user.avatar.url(:thumb) %>
+          <%= form_for :user, url: user_update_path, html: { multipart: true }, method: 'put' do |form| %>
+            <div class="custom-file" style="width: 93%; margin: 10px 5px 5px 5px;">
+              <input type="file" class="custom-file-input" id="customFile" name="user[avatar]" style="height: 30px;">
+              <label class="custom-file-label" for="customFile" style="height: 30px; text-align: left; padding: 3px;">Choose file</label>
+            </div>
+            <%= form.submit 'save', class: 'btn btn-default btn-sm' %>
+          <% end %>
           <h4 class='card-title'  style="color: white">
             <%= current_user.name%><br/>
             <small><%#= current_user.classroom.grade%></small>
