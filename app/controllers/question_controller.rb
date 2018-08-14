@@ -16,8 +16,19 @@ class QuestionController < ApplicationController
     redirect_to home_index_url
   end
 
+  def update
+    return unless check_role?
+    question = Question.find(params[:id])
+    question.update(question_params)
+  end
+
   private 
+
   def question_params
-    params.require(:question).permit(:subject_id, :title, :body)
+    params.require(:question).permit(:subject_id, :title, :body, :answer)
+  end
+
+  def check_role?
+    current_user.role == "teacher"
   end
 end
