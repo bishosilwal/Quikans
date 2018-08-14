@@ -37,9 +37,10 @@
       <% @subjects.each do |subject|%>
         <% subject.questions.each do |question|%>
           <div class="card question">
-            <div class="card-header">
+            <div class="card-header"  style="height: 45px; text-align: center;">
               <label class="pull-left"><%= question.subject.name%></label>
-              <label class="pull-right"> Answer: <%= question.answer.nil? ? 'Not Given' : 'Given'%></label>
+              <small style="color: #83869b;"> <%= question.created_at.strftime("%v")%></small> 
+              <small class="pull-right" style="color: #83869b;"> Answer: <%= question.answer.nil? ? 'Not Given' : 'Given'%></small>
             </div>
             <div class="card-body">
               <h5 class="card-title"><%=question.title%></h5>
